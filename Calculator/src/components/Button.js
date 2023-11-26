@@ -7,7 +7,7 @@ export default ({ onPress, text, size, theme }) => {
     const textStyles = [styles.text];
 
     if (size === "constant") {
-      buttonStyles.push(styles.constant)
+      buttonStyles.push(styles.buttonTwo)
     }
 
     if (theme === "secondary") {
@@ -37,18 +37,18 @@ const styles = StyleSheet.create({
     borderRadius: Math.floor(buttonWidth),
     margin: 5,
   },
+  buttonTwo: {
+    width: screen.width / 2 - 10,
+    flex: 0,
+    alignItems: "flex-start",
+    paddingLeft: 40,
+  },
   text: {
     color: "#fff",
     fontSize: 24,
   },
   textSecondary: {
     color: "#060606",
-  },
-  buttonDouble: {
-    width: screen.width / 2 - 10,
-    flex: 0,
-    alignItems: "flex-start",
-    paddingLeft: 40,
   },
   buttonSecondary: {
     backgroundColor: "#a6a6a6",
