@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native"; 
 
-const Row = ({children}) => {
-  return <View style={styles.container}>{View}</View>;
+const Row = ({child}) => {
+  return <View style={styles.container}>{child}</View>;
 };
 
 const styles = StyleSheet.create({
@@ -9,3 +9,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 });
+
+export default Row;
