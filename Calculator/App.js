@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Button from './components/Button'
-import Row from './components/Row'
-
+import Button from './src/components/Button';
+import Row from './src/components/Row';
 
 
 export default function App() {
