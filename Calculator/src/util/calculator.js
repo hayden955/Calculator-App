@@ -14,7 +14,7 @@ export const numberCase = (value, state) => {
   return {currValue: '${state.currValue}${value}'};
 };
 
-const answerCase = (state) => {
+const opCase = (state) => {
   const {currValue, prevValue, operator} = state;
 
   const curr = parseFloat(currValue);
@@ -43,6 +43,37 @@ const answerCase = (state) => {
         currValue: '${prev / curr}',
         ...resetState,
       };
+
+    default:
+      return state;
   }
-  
-}
+};
+
+const calculator = (type, value, state) => {
+  switch(type){
+    case "number":
+      return numberCase(value, state);
+    case "clear":
+      return clearCase;
+    case "pn":
+      return {
+        currentValue: '${parseFloat(state.currValue) * -1}',
+      };
+    case "percentage":
+      return {
+        currentValue: '${parseFloat(state.currValue) * .01}',
+      };
+    case "operator":
+      return {
+        operator: value,
+        prevValue: state.currValue,
+        currValue: "0"
+      };
+    case "equal":
+      return opCase(state);
+    default:
+      return state;
+  }
+};
+
+export default calculator;
