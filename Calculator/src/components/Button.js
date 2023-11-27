@@ -3,25 +3,25 @@ import { Dimensions, StyleSheet, Text, TouchableOpacity } from "react-native";
 //4 props below
 //each prop has a function 
 export default ({ onPress, text, size, theme }) => {
-    const buttonStyles = [styles.button];
-    const textStyles = [styles.text];
+  const buttonStyles = [styles.button];
+  const textStyles = [styles.text];
 
-    if (size === "constant") {
-      buttonStyles.push(styles.buttonTwo)
-    }
+  if (size === "double") {
+    buttonStyles.push(styles.buttonTwo)
+  }
 
-    if (theme === "secondary") {
-      buttonStyles.push(styles.buttonSecondary);
-      textStyles.push(styles.textSecondary);
-    } else if (theme === "accent") {
-      buttonStyles.push(styles.buttonAccent);
-    }
+  if (theme === "secondary") {
+    buttonStyles.push(styles.buttonSecondary);
+    textStyles.push(styles.textSecondary);
+  } else if (theme === "accent") {
+    buttonStyles.push(styles.buttonAccent);
+  }
 
-    return (
-      <TouchableOpacity onPress={onPress} style={buttonStyles}>
-        <Text style={textStyles}>{text}</Text>
-      </TouchableOpacity>
-    );
+  return (
+    <TouchableOpacity onPress={onPress} style={buttonStyles}>
+      <Text style={textStyles}>{text}</Text>
+    </TouchableOpacity>
+  );
 };
 
 const screen = Dimensions.get("window");

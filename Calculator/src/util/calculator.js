@@ -1,7 +1,7 @@
 //calculator logic
 
 
-export const clearCase = {
+export const initState = {
   currValue: "0",
   operator: null,
   prevValue: null,
@@ -9,9 +9,10 @@ export const clearCase = {
 
 export const numberCase = (value, state) => {
   if (state.currValue === "0"){
-    return {currValue: '${value}'};
+    return { currValue: '${value}' };
   }
-  return {currValue: '${state.currValue}${value}'};
+  return {currValue: '${state.currValue}${value}',
+  };
 };
 
 const opCase = (state) => {
@@ -54,7 +55,7 @@ const calculator = (type, value, state) => {
     case "number":
       return numberCase(value, state);
     case "clear":
-      return clearCase;
+      return initState;
     case "pn":
       return {
         currentValue: '${parseFloat(state.currValue) * -1}',
